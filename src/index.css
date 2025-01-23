@@ -1,0 +1,106 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light gray for a clean background */
+  color: #333; /* Dark gray for text */
+}
+
+header {
+  background-color: #4caf50; /* Green for health and trust */
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d5f5d2; /* Light green for hover */
+}
+
+.hero {
+  background-color: #e8f5e9; /* Light green background for a soothing effect */
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #2e7d32; /* Dark green for emphasis */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #388e3c; /* Medium green */
+}
+
+section {
+  padding: 2rem 1rem;
+}
+
+.products {
+  background-color: #ffffff; /* White for a clean product section */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  border-radius: 8px;
+  max-width: 1200px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.product {
+  border: 1px solid #c8e6c9; /* Light green border */
+  padding: 1rem;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.product h3 {
+  color: #2e7d32;
+}
+
+footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
