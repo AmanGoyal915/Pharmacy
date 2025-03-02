@@ -1,38 +1,589 @@
-.App {
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #007bff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+}
+
+.nav-button {
+  margin: 0 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url("https://via.placeholder.com/1500x800") no-repeat center
+    center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   text-align: center;
+  padding: 0;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Sections */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
 }
 
-.App-header {
-  background-color: #282c34;
+.about,
+.services,
+.products,
+.contact,
+.process {
+  background: #1e1e1e;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #0056b3;
+}
+
+/*---------------------------------------------------------*/
+
+.wellness-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/public/bg-1.jpeg") no-repeat center center/cover;
+  padding: 2rem;
+}
+
+.wellness-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 88, 200, 0.6);
+  z-index: -1;
+}
+
+.wellness-content {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*---------------------------------------------------------*/
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../public/bg-2.jpeg") no-repeat center center/cover;
+  padding: 2rem;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.content {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #00c896;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  min-height: 300px;
+  color: #002d62;
+  font-family: Arial, sans-serif;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.image-container {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42%;
+  max-width: 550px;
+  z-index: 1;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 32px;
+}
+
+/*---------------------------------------------------------*/
+
+.services-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  background: url("../public/bg-3.jpeg") no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.services-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.services-header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+  color: black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 1rem;
+  background: #00c896;
+  color: white;
+  border-radius: 0 0 10px 10px;
+  flex-grow: 1;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/*---------------------------------------------------------*/
+
+.process-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.process-top {
+  flex: 1;
+  background: #0a192f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.process-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.process-bottom {
+  flex: 1;
+  background: #0a192f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+
+.process-content {
+  background: #00c896;
+  color: #292b2d;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 80%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  bottom: 24%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*---------------------------------------------------------*/
+
+.allopathic-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  background: #0a192f url("../public/bg-5.jpeg") no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.allopathic-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.allopathic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.allopathic-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  color: black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.product-name {
+  background: #002d62;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/*---------------------------------------------------------*/
+
+.ayurvedic-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  background: #0a192f url("../public/bg-6.jpeg") no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.ayurvedic-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.ayurvedic-grid {
+  display: flex;
+  gap: 20px;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.ayurvedic-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  color: black;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.product-name {
+  background: #002d62;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/*---------------------------------------------------------*/
+
+.healthcare-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  background: #0a192f url("../public/bg-7.jpeg") no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.healthcare-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.healthcare-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.healthcare-left,
+.healthcare-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.healthcare-right {
+  display: flex;
+  justify-content: center;
+}
+
+.healthcare-image {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.healthcare-box {
+  background: #00c896;
+  color: #002d62;
+  padding: 1.5rem;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/*---------------------------------------------------------*/
+
+.contact-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  background: #0a192f;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.contact-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.contact-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-input, .contact-textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #0056a6;
   color: white;
+  font-size: 1.2rem;
+  text-align: left;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-input::placeholder, .contact-textarea::placeholder {
+  color: white;
+  opacity: 0.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contact-textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-button {
+  background: #0056a6;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.contact-button:hover {
+  background: #003f7f;
 }
