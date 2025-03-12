@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "https://mediscanpharmaceuticals.com",
+      "source": "/",
       "destination": "https://www.mediscanpharmaceuticals.com",
       "permanent": true
     }
