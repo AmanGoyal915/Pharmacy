@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/feedback/((?!general).*)",
-      "destination": "/api/feedback/general",
+      "source": "https://mediscanpharmaceuticals.com",
+      "destination": "https://www.mediscanpharmaceuticals.com",
       "permanent": true
     }
   ]
