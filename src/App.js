@@ -1,11 +1,15 @@
 import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./App.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const productRef = useRef(null);
   const contactRef = useRef(null);
+  const formRef = useRef(null);
 
   const products = [
     { name: "Multiscan-G", image: "/p-51.png" },
@@ -16,9 +20,8 @@ const App = () => {
     { name: "Feroscan-XT", image: "/p-56.png" },
     { name: "Livscan 5G", image: "/p-57.png" },
     { name: "Protiscan", image: "/p-58.png" },
+    { name: "Othoscan", image: "/p-6.png" },
   ];
-
-  const AyurvedicProducts = [{ name: "Othoscan", image: "/p-6.png" }];
 
   const scrollToSection = (ref) => {
     if (ref.current) {
@@ -27,6 +30,26 @@ const App = () => {
         behavior: "smooth",
       });
     }
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_3admp7k",
+        "template_986jzby",
+        formRef.current,
+        "FpoXm8allvIU2S6D4"
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          toast.error("Failed to send message. Try again.");
+        }
+      );
   };
 
   return (
@@ -189,32 +212,13 @@ const App = () => {
         </div>
       </section>
 
-      {/* Ayurvedic Product Section */}
+      {/* Product Section */}
       <section ref={productRef} className="section products">
-        <div className="allopathic-container">
-          <h1 className="allopathic-title">Allopathic Product</h1>
-          <div className="allopathic-grid">
+        <div className="product-container">
+          <h1 className="product-title">Products</h1>
+          <div className="product-grid">
             {products.map((product, index) => (
-              <div className="allopathic-card" key={index}>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="product-image"
-                />
-                <div className="product-name">{product.name}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ayurvedic Product Section */}
-      <section className="section products">
-        <div className="ayurvedic-container">
-          <h1 className="ayurvedic-title">Allopathic Product</h1>
-          <div className="ayurvedic-grid">
-            {AyurvedicProducts.map((product, index) => (
-              <div className="ayurvedic-card" key={index}>
+              <div className="product-card" key={index}>
                 <img
                   src={product.image}
                   alt={product.name}
@@ -280,36 +284,67 @@ const App = () => {
                 className="contact-image"
               />
             </div>
-            <div className="contact-right">
+            <form ref={formRef} onSubmit={sendEmail} className="contact-right">
               <input
                 type="text"
+                name="first_name"
                 placeholder="Enter Your First Name"
                 className="contact-input"
+                required
               />
               <input
                 type="text"
+                name="last_name"
                 placeholder="Enter Your Last Name"
                 className="contact-input"
+                required
               />
               <input
                 type="text"
+                name="phone"
                 placeholder="Enter Your Number Here"
                 className="contact-input"
+                required
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Enter Your Email Here"
                 className="contact-input"
+                required
               />
               <textarea
+                name="message"
                 placeholder="Write your Enquiry here"
                 className="contact-textarea"
+                required
               ></textarea>
-              <button className="contact-button">SUBMIT YOUR ENQUIRY</button>
-            </div>
+              <button type="submit" className="contact-button">
+                SUBMIT YOUR ENQUIRY
+              </button>
+            </form>
           </div>
         </div>
       </section>
+      {/* Whatsapp */}
+      <a
+        href="https://wa.me/8968983355?text=Hi%20Mediscan%2C%20I%20have%20an%20enquiry"
+        className="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/124/124034.png"
+          alt="WhatsApp Chat"
+          className="whatsapp-icon"
+        />
+      </a>
+      {/* Toast */}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar
+      />
     </div>
   );
 };
